@@ -596,3 +596,6 @@ body.is-paused .film { animation-play-state: paused; }
 }
 .proof-row span, .tile figcaption, .review-grid footer { font-size: 0.9375rem; letter-spacing: 0.01em; }
 .foot p { font-size: 0.875rem; }
+
+/* pre-send: no one-word last lines in body copy */
+p,li,blockquote,figcaption{text-wrap:pretty}
