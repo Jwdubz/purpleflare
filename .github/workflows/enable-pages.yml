@@ -8,36 +8,51 @@ on:
 permissions:
   contents: read
   pages: write
+  id-token: write
+  deployments: write
 
 jobs:
   enable:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: Enable Pages from main with custom domain
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Create github-pages environment if needed
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
         run: |
-          set -eu
-          if ! gh api "repos/${REPO}/pages" >/tmp/pages.json 2>/tmp/pages.err; then
-            echo "Pages not configured yet; creating from main /"
-            gh api --method POST "repos/${REPO}/pages" \
-              -H "Accept: application/vnd.github+json" \
-              -f build_type=legacy \
-              -F source[branch]=main \
-              -F source[path]=/ | tee /tmp/pages.json
-          else
-            echo "Pages already exists"
-            cat /tmp/pages.json
-          fi
-          echo "Updating CNAME and HTTPS enforcement"
-          # Do not enforce HTTPS while the custom-domain cert is pending.
+          gh api --method PUT "repos/${REPO}/environments/github-pages" \
+            -H "Accept: application/vnd.github+json" \
+            --silent || true
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+      - name: Set custom domain without HTTPS enforcement
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          REPO: ${{ github.repository }}
+        run: |
           gh api --method PUT "repos/${REPO}/pages" \
             -H "Accept: application/vnd.github+json" \
             -f cname='purpleflare.jarrettwroten.com' \
-            -F https_enforced=false \
-            -f build_type=legacy \
-            -F source[branch]=main \
-            -F source[path]=/ | tee /tmp/pages-updated.json
-          echo "Pages configuration:"
-          gh api "repos/${REPO}/pages"
+            -F https_enforced=false || true
+          gh api "repos/${REPO}/pages" || true
