@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Purple Flare Wraps · Concept</title>
+  <meta name="description" content="Private concept for Purple Flare Wraps. Henderson / Las Vegas. Not live." />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preload" href="fonts/Satoshi-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/Satoshi-500.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/InterTight-500-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/InterTight-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="fonts/Oswald-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="film/hero.mp4" as="video" type="video/mp4" />
+  <link rel="stylesheet" href="site.css?v=12" />
+</head>
+<body>
+  <div class="loader" id="loader" aria-hidden="false">
+    <p class="loader__brand"><img src="img/logo.png" alt="Purple Flare Wraps" width="400" height="150" decoding="async" /></p>
+    <h1 class="loader__title">Built For Serious Owners<br />And Fleet Operators.</h1>
+    <div class="loader__rule" aria-hidden="true"><span id="loaderBar"></span></div>
+    <p class="loader__pct" id="loaderPct">0%</p>
+    <button type="button" class="ghost" id="enterBtn">Enter The Shop</button>
+  </div>
+
+  <button type="button" class="pause" id="pauseBtn" aria-pressed="false" title="Pause Motion">Pause</button>
+
+  <header class="mast" id="mast">
+    <a class="mast__brand" href="#top"><img src="img/logo.png" alt="Purple Flare Wraps" width="400" height="150" decoding="async" /></a>
+    <nav class="mast__nav" aria-label="Primary">
+      <a href="#work">Work</a>
+      <a href="#protect">Protect</a>
+      <a href="#wrap">Wrap</a>
+      <a href="#quote">Quote</a>
+    </nav>
+    <a class="ghost ghost--sm" href="tel:+17026774200">Get A Free Quote</a>
+  </header>
+
+  <main id="top">
+    <section class="hero" id="hero" data-film>
+      <div class="film-frame">
+        <video class="film" src="film/hero.mp4" poster="img/hero-poster.jpg" muted loop playsinline autoplay preload="auto"></video>
+      </div>
+      <div class="hero__copy">
+        <p class="eyebrow"><i aria-hidden="true"></i>Henderson · Las Vegas</p>
+        <h2 class="display">Built For Serious Owners<br />And Fleet Operators.</h2>
+        <p class="lede">Paint Protection Film, Ceramic Coatings, Window Tint, &amp; Full Vehicle Wraps.<br />Designed, Printed &amp; Installed In-House.</p>
+        <a class="ghost" href="tel:+17026774200">Get A Free Quote</a>
+      </div>
+    </section>
+
+    <section class="manifesto" id="about">
+      <p class="manifesto__line">
+        Over A Decade In Las Vegas.
+        <em>Fourteen People.</em>
+        Twelve Thousand Five Hundred Square Feet.
+      </p>
+      <p class="manifesto__sub">
+        Las Vegas Is Manufacturer Zone 3. Real Warranty Here Is 2 To 3 Years.
+        Most Wraps Look Great For 3 To 5 With Care.
+      </p>
+      <ul class="proof-row" aria-label="Proof">
+        <li><strong>4.8</strong><span>From 485+ Google Reviews</span></li>
+        <li><strong>141K+</strong><span>On Instagram</span></li>
+        <li><strong>2014</strong><span>In-House Since</span></li>
+      </ul>
+    </section>
+
+    <section class="chapter" id="work">
+      <div class="chapter__head">
+        <p class="eyebrow"><i aria-hidden="true"></i>The Floor</p>
+        <h2 class="display">Watch The Work.</h2>
+      </div>
+      <div class="film-frame film-frame--wide" data-film>
+        <video class="film" src="film/shop.mp4" poster="img/shop-poster.jpg" muted loop playsinline autoplay preload="metadata"></video>
+      </div>
+      <p class="caption">Inside the Henderson shop. Design, print, and install under one roof.</p>
+    </section>
+
+    <section class="chapter chapter--split" id="protect">
+      <div class="chapter__copy">
+        <p class="eyebrow"><i aria-hidden="true"></i>Protect</p>
+        <h2 class="display">Paint Protection Film Done On The Floor.</h2>
+        <p class="body">Ultra durable clear bra on high impact panels or the whole vehicle. Every job backed by a warranty.</p>
+        <a class="ghost ghost--sm" href="tel:+17026774200">Ask About PPF</a>
+      </div>
+      <div class="film-frame" data-film>
+        <video class="film" src="film/carbon.mp4" poster="img/carbon-poster.jpg" muted loop playsinline autoplay preload="metadata"></video>
+      </div>
+    </section>
+
+    <section class="chapter chapter--split chapter--flip" id="wrap">
+      <div class="chapter__copy">
+        <p class="eyebrow"><i aria-hidden="true"></i>Wrap</p>
+        <h2 class="display">A New Color You Can Undo.</h2>
+        <p class="body">Full color changes, custom printed designs, and single panel accents. Five premium film brands stocked in-house.</p>
+        <a class="ghost ghost--sm" href="tel:+17026774200">Ask About A Wrap</a>
+      </div>
+      <div class="film-frame" data-film>
+        <video class="film" src="film/gwagon.mp4" poster="img/gwagon-poster.jpg" muted loop playsinline autoplay preload="metadata"></video>
+      </div>
+    </section>
+
+    <section class="chapter" id="cyber">
+      <div class="chapter__head">
+        <p class="eyebrow"><i aria-hidden="true"></i>Transformations</p>
+        <h2 class="display">Cybertruck To Exotics. Same Shop.</h2>
+      </div>
+      <div class="grid-films">
+        <figure class="tile" data-film>
+          <video class="film" src="film/cyber.mp4" poster="img/cyber-poster.jpg" muted loop playsinline autoplay preload="metadata"></video>
+          <figcaption>Cybertruck · Color Change, PPF, Ceramic Tint</figcaption>
+        </figure>
+        <figure class="tile" data-film>
+          <video class="film" src="film/wrap2.mp4" poster="img/wrap2-poster.jpg" muted loop playsinline autoplay preload="metadata"></video>
+          <figcaption>G-Wagon · Color Change Wrap Install</figcaption>
+        </figure>
+        <figure class="tile" data-film>
+          <video class="film" src="film/tour.mp4" poster="img/tour-poster.jpg" muted loop playsinline autoplay preload="metadata"></video>
+          <figcaption>Shop Tour · Color PPF, Tesla, Lamborghini</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="reviews" id="reviews">
+      <p class="eyebrow"><i aria-hidden="true"></i>What Owners Say</p>
+      <h2 class="display">4.8 From 485+ Google Reviews.</h2>
+      <div class="review-grid">
+        <blockquote><p>“We wouldn't use anyone else.”</p><footer>Brad King · Vehicle Wrap</footer></blockquote>
+        <blockquote><p>“Looks like a black mirror.”</p><footer>Paul · Paint Protection Film · Chevrolet Tahoe</footer></blockquote>
+        <blockquote><p>“This is the 3rd vehicle I have now had wrapped by purple flare.”</p><footer>Bannion · Vehicle Wrap</footer></blockquote>
+        <blockquote><p>“The only place I trust.”</p><footer>Maya Watson · Vehicle Wrap</footer></blockquote>
+        <blockquote><p>“Looks like paint.”</p><footer>Benjamin Erickson · Vehicle Wrap · Truck</footer></blockquote>
+        <blockquote><p>“Not the cheapest but I was looking for quality.”</p><footer>Matthew Burrell · Vehicle Wrap</footer></blockquote>
+      </div>
+    </section>
+
+    <section class="ask" id="quote">
+      <p class="eyebrow"><i aria-hidden="true"></i>Next Step</p>
+      <h2 class="display">Send A Couple Of Photos.<br />We Will Tell You Exactly What We Recommend.</h2>
+      <p class="body">7585 Commercial Way, Suite G, Henderson, NV 89011. Monday to Friday, 9AM to 6PM.</p>
+      <div class="ask__actions">
+        <a class="ghost" href="tel:+17026774200">Call 702-677-4200</a>
+        <a class="ghost ghost--fill" href="mailto:info@purpleflareagency.com?subject=Quote%20Request">Email The Shop</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p>Purple Flare Wraps · Private Concept · Not Live</p>
+    <p class="foot__brand" aria-hidden="true"><img src="img/logo.png" alt="" width="400" height="150" decoding="async" /></p>
+  </footer>
+
+  <script src="vendor/gsap.min.js"></script>
+  <script src="vendor/ScrollTrigger.min.js"></script>
+  <script src="vendor/lenis.min.js"></script>
+  <script src="site.js?v=12"></script>
+</body>
+</html>
