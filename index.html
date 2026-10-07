@@ -11,13 +11,14 @@
   <link rel="preload" href="fonts/InterTight-500-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="fonts/InterTight-700-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="fonts/Oswald-700-latin.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="preload" href="film/hero.mp4" as="video" type="video/mp4" />
-  <link rel="stylesheet" href="site.css?v=12" />
+  <link rel="icon" href="img/favicon.png?v=13" type="image/png" />
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png?v=13" />
+  <link rel="stylesheet" href="site.css?v=13" />
 </head>
 <body>
   <div class="loader" id="loader" aria-hidden="false">
     <p class="loader__brand"><img src="img/logo.png" alt="Purple Flare Wraps" width="400" height="150" decoding="async" /></p>
-    <h1 class="loader__title">Built For Serious Owners<br />And Fleet Operators.</h1>
+    <h1 class="loader__title"><span class="ln">Built For Serious Owners</span> <span class="ln">And Fleet Operators.</span></h1>
     <div class="loader__rule" aria-hidden="true"><span id="loaderBar"></span></div>
     <p class="loader__pct" id="loaderPct">0%</p>
     <button type="button" class="ghost" id="enterBtn">Enter The Shop</button>
@@ -26,7 +27,7 @@
   <button type="button" class="pause" id="pauseBtn" aria-pressed="false" title="Pause Motion">Pause</button>
 
   <header class="mast" id="mast">
-    <a class="mast__brand" href="#top"><img src="img/logo.png" alt="Purple Flare Wraps" width="400" height="150" decoding="async" /></a>
+    <a class="mast__brand" href="#top" aria-label="Purple Flare Wraps, back to top"><img src="img/logo.png" alt="Purple Flare Wraps" width="400" height="150" decoding="async" /></a>
     <nav class="mast__nav" aria-label="Primary">
       <a href="#work">Work</a>
       <a href="#protect">Protect</a>
@@ -39,11 +40,15 @@
   <main id="top">
     <section class="hero" id="hero" data-film>
       <div class="film-frame">
-        <video class="film" src="film/hero.mp4" poster="img/hero-poster.jpg" muted loop playsinline autoplay preload="auto"></video>
+        <video class="film" id="heroFilm" poster="img/hero-poster.jpg?v=13" muted loop playsinline autoplay preload="auto">
+          <source src="film/hero-sm.mp4?v=13" type="video/mp4" media="(max-width: 600px) and (orientation: portrait)" />
+          <source src="film/hero.mp4?v=13" type="video/mp4" />
+        </video>
+        <script>if (matchMedia("(max-width: 600px) and (orientation: portrait)").matches) document.getElementById("heroFilm").poster = "img/hero-poster-sm.jpg?v=13";</script>
       </div>
       <div class="hero__copy">
-        <p class="eyebrow"><i aria-hidden="true"></i>Henderson · Las Vegas</p>
-        <h2 class="display">Built For Serious Owners<br />And Fleet Operators.</h2>
+        <p class="eyebrow eyebrow--place">Henderson, Las Vegas</p>
+        <h2 class="display"><span class="ln">Built For Serious Owners</span> <span class="ln">And Fleet Operators.</span></h2>
         <p class="lede">Paint Protection Film, Ceramic Coatings, Window Tint, &amp; Full Vehicle Wraps.<br />Designed, Printed &amp; Installed In-House.</p>
         <a class="ghost" href="tel:+17026774200">Get A Free Quote</a>
       </div>
@@ -80,7 +85,7 @@
     <section class="chapter chapter--split" id="protect">
       <div class="chapter__copy">
         <p class="eyebrow"><i aria-hidden="true"></i>Protect</p>
-        <h2 class="display">Paint Protection Film Done On The Floor.</h2>
+        <h2 class="display">Paint Protection Film Done On The&nbsp;Floor.</h2>
         <p class="body">Ultra durable clear bra on high impact panels or the whole vehicle. Every job backed by a warranty.</p>
         <a class="ghost ghost--sm" href="tel:+17026774200">Ask About PPF</a>
       </div>
@@ -92,7 +97,7 @@
     <section class="chapter chapter--split chapter--flip" id="wrap">
       <div class="chapter__copy">
         <p class="eyebrow"><i aria-hidden="true"></i>Wrap</p>
-        <h2 class="display">A New Color You Can Undo.</h2>
+        <h2 class="display">A New Color You Can&nbsp;Undo.</h2>
         <p class="body">Full color changes, custom printed designs, and single panel accents. Five premium film brands stocked in-house.</p>
         <a class="ghost ghost--sm" href="tel:+17026774200">Ask About A Wrap</a>
       </div>
@@ -104,7 +109,7 @@
     <section class="chapter" id="cyber">
       <div class="chapter__head">
         <p class="eyebrow"><i aria-hidden="true"></i>Transformations</p>
-        <h2 class="display">Cybertruck To Exotics. Same Shop.</h2>
+        <h2 class="display"><span class="ln">Cybertruck To Exotics.</span> <span class="ln">Same Shop.</span></h2>
       </div>
       <div class="grid-films">
         <figure class="tile" data-film>
@@ -124,7 +129,7 @@
 
     <section class="reviews" id="reviews">
       <p class="eyebrow"><i aria-hidden="true"></i>What Owners Say</p>
-      <h2 class="display">4.8 From 485+ Google Reviews.</h2>
+      <h2 class="display">4.8 From 485+ Google&nbsp;Reviews.</h2>
       <div class="review-grid">
         <blockquote><p>“We wouldn't use anyone else.”</p><footer>Brad King · Vehicle Wrap</footer></blockquote>
         <blockquote><p>“Looks like a black mirror.”</p><footer>Paul · Paint Protection Film · Chevrolet Tahoe</footer></blockquote>
@@ -137,7 +142,7 @@
 
     <section class="ask" id="quote">
       <p class="eyebrow"><i aria-hidden="true"></i>Next Step</p>
-      <h2 class="display">Send A Couple Of Photos.<br />We Will Tell You Exactly What We Recommend.</h2>
+      <h2 class="display"><span class="ln">Send A Couple Of Photos.</span> <span class="ln">We Will Tell You Exactly What We Recommend.</span></h2>
       <p class="body">7585 Commercial Way, Suite G, Henderson, NV 89011. Monday to Friday, 9AM to 6PM.</p>
       <div class="ask__actions">
         <a class="ghost" href="tel:+17026774200">Call 702-677-4200</a>
@@ -154,6 +159,6 @@
   <script src="vendor/gsap.min.js"></script>
   <script src="vendor/ScrollTrigger.min.js"></script>
   <script src="vendor/lenis.min.js"></script>
-  <script src="site.js?v=12"></script>
+  <script src="site.js?v=13"></script>
 </body>
 </html>

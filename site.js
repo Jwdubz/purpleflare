@@ -52,10 +52,6 @@
     pauseBtn.textContent = paused ? "Play" : "Pause";
     document.body.classList.toggle("is-paused", paused);
     setFilmsPlaying(!paused);
-    if (lenis) {
-      if (paused) lenis.stop();
-      else lenis.start();
-    }
     if (window.ScrollTrigger) {
       ScrollTrigger.getAll().forEach((st) => {
         if (paused) st.disable(false);
@@ -74,7 +70,7 @@
     });
     lenis.on("scroll", ScrollTrigger.update);
     gsap.ticker.add((time) => {
-      if (!paused) lenis.raf(time * 1000);
+      lenis.raf(time * 1000);
     });
     gsap.ticker.lagSmoothing(0);
 
