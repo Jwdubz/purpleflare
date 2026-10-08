@@ -354,16 +354,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   border-radius: 0;
   aspect-ratio: auto;
 }
-.hero .film { opacity: 0.95; }
-.hero::after {
-  content: "";
-  position: absolute;
-  left: 0; right: 0; bottom: 0;
-  height: 55%;
-  background: linear-gradient(to top, rgba(16,14,20,0.88), rgba(16,14,20,0.35) 45%, transparent);
-  pointer-events: none;
-  z-index: 1;
-}
+/* Raw footage: no opacity dimming, no gradient scrim over the hero film. Legibility comes from text-shadow on the copy only. */
 .hero__copy {
   position: relative;
   z-index: 2;
@@ -372,6 +363,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   gap: 1.1rem;
 }
 .hero__copy .ghost { justify-self: start; }
+.hero__copy, .hero__copy .ghost { text-shadow: 0 1px 2px rgba(0,0,0,.55), 0 2px 22px rgba(0,0,0,.5); }
 
 /* Manifesto */
 .manifesto {
