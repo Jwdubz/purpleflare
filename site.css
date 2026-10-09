@@ -591,3 +591,4 @@ body.is-paused .film { animation-play-state: paused; }
 
 /* pre-send: no one-word last lines in body copy */
 p,li,blockquote,figcaption{text-wrap:pretty}
+.mast .ghost--sm{margin-left:auto}
