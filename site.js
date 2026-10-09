@@ -58,7 +58,7 @@
         else st.enable(false);
       });
     }
-    /* Pause freezes all motion: GSAP + smooth scroll */ if(window.gsap){gsap.globalTimeline[paused?'pause':'resume']();}if(typeof lenis!=='undefined'&&lenis){paused?lenis.stop():lenis.start();}
+    /* Pause freezes all motion: GSAP + smooth scroll */ if(window.gsap){gsap.globalTimeline[paused?'pause':'resume']();}if(typeof lenis!=='undefined'&&lenis){lenis.options.smoothWheel=!paused;}
   });
 
   function bootMotion() {
