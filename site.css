@@ -592,3 +592,10 @@ body.is-paused .film { animation-play-state: paused; }
 /* pre-send: no one-word last lines in body copy */
 p,li,blockquote,figcaption{text-wrap:pretty}
 .mast .ghost--sm{margin-left:auto}
+
+/* Manifesto: copy left, finished-work film right; stacked on phone */
+.manifesto { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+.manifesto__media { width: 100%; }
+@media (max-width: 760px) {
+  .manifesto { grid-template-columns: 1fr; }
+}
