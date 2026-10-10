@@ -343,6 +343,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 /* Hero */
 .hero {
   position: relative;
+  min-height: 100vh;
   min-height: 100svh;
   display: grid;
   align-items: end;
@@ -599,3 +600,7 @@ p,li,blockquote,figcaption{text-wrap:pretty}
 @media (max-width: 760px) {
   .manifesto { grid-template-columns: 1fr; }
 }
+
+/* iOS legibility pass: hero place line + subtext read over bright footage. Text-only (no overlay, tint or blur on the film). */
+.hero__copy .lede{color:var(--ink);font-weight:500;text-shadow:0 1px 1px rgba(10,8,14,.9),0 1px 3px rgba(10,8,14,.8),0 2px 14px rgba(10,8,14,.6)}
+.hero__copy .eyebrow--place{text-shadow:0 1px 1px rgba(10,8,14,.9),0 1px 3px rgba(10,8,14,.8),0 0 18px rgba(10,8,14,.65)}
